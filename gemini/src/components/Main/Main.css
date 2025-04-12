@@ -1,0 +1,144 @@
+.main{
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+}
+
+.main .nav{
+    display: flex;
+    font-size: 22px;
+    font-family: Audiowide, sans-serif;
+    align-items: center;
+    padding: 20px;
+    background-color: #e3f2fd;
+    justify-content: space-between;
+}
+
+.main .nav img{
+    width: 45px;
+    border-radius: 50%;
+}
+
+
+.main-container{
+    margin: auto;
+    max-width: 900px;
+    padding: 15px;
+}
+
+.main-container .greet{
+    font-size: 24px;
+    font-family: Audiowide, sans-serif;
+    margin: 50px 0px;
+    align-items: center;
+    padding-bottom: 10px;
+    line-height: 1.6;
+    color: #a9a9a9;
+}
+
+.main-container .greet span{
+    background: -webkit-linear-gradient(16deg, #12c2e9, #c471ed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.main .card{
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #d9dde3;
+    height: 150px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main .card:hover {
+    outline: 2px solid #00e5ff;
+    transform: scale(1.05);
+    transition: all 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 25px rgba(0, 170, 255, 0.5); /* Soft blue glow */
+}
+
+.main .card img{
+    position: absolute;
+    border-radius: 20px;
+    width: 35px;
+    padding: 3px;
+    bottom: 8px;
+    right: 8px;
+    background-color: #e3e6e8;
+}
+
+.main .card p{
+    font-size: 17px;
+    font-family: Inter, sans-serif;
+    margin-top: 10px;
+}
+
+.main-bottom{
+    max-width: 900px;
+    margin:auto;
+    padding: 2px 20px;
+    position:absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 20px;
+    justify-content: space-between;
+    border-radius: 50px;
+    background-color: #f7f9fa;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 5px 25px rgba(0, 170, 255, 0.5); /* Soft blue glow */
+}
+
+.search-box:hover{
+    outline: 2px solid #c471ed;
+}
+
+.search-box input{
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    outline: none;
+    background: transparent;
+    flex: 1;
+}
+
+.search-box img{
+    width: 25px;
+    cursor: pointer;
+}
+
+.search-box div{
+    align-items: center;
+    display: flex;
+    gap: 13px;
+}
+
+.main .bottom-info{
+    font-size: 13px;
+    font-family: Inter, sans-serif;
+    font-weight: 385;
+    text-align: center;
+    margin: 10px auto;
+}
+
+
+
+
+
