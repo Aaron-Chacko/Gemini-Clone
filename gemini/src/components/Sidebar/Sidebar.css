@@ -40,7 +40,10 @@
 }
 
 .sidebar .recent {
+    display: flex;
+    flex-direction: column; /*made changies here -----------------------------------------------------*/
     margin-top: 30px;
+    animation: fadeIn 1.5s;
 }
 
 .sidebar .recent .recent-title {
@@ -87,5 +90,11 @@
 
 .bottom-item:hover {
     color: black;
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
 }
 
