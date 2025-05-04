@@ -11,6 +11,10 @@ const contextprovider = (props) => {
     const [loading, setLoading] = useState(false);
     const [resultData, setResultData] = useState(""); 
 
+    const delayPara = (index, nextWord) =>{
+
+    }
+
     const onSent = async (prompt) => {
 
         setResultData("");
@@ -18,6 +22,12 @@ const contextprovider = (props) => {
         setShowResult(true);
         setRecentPrompt(input);
         const response = await run(input)
+        let responseArray = response.split("**");
+        let newArray;
+        for(let i = 0; i < responseArray.length; i++){
+            if(i === 0 || i%2 !== 0){
+                newArray.push(responseArray[i]);
+        }
         setResultData(response);
         setLoading(false);
         setInput("");
