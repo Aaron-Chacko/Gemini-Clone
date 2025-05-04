@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./Main.css";
 import { assets } from "../../assets/assets";
+import { context } from "../../context/context";
 
 const Main = () => {
+  
+  const {onSent, recentPrompt, showResult, loading, resultData, setInput, input} = useContext(context);
+
   const handleSend = () => {
-    console.log("Prompt sent!");
-    // Your sending logic goes here
-};
+    if (input.trim() === "") return;
+    setInput("");
+    onSent(input);
+  }
+
   return (
     <div className="main">
       <div className="nav">
@@ -14,6 +20,9 @@ const Main = () => {
         <img src={assets.favicon_logo} alt="" />
       </div>
       <div className="main-container">
+
+        {!showResult //------------------------------to show result or not------------------------
+        ?<>
         <div className="greet">
           <h1>
             <span>Welcome to Gemini Clone</span>
@@ -38,9 +47,31 @@ const Main = () => {
             <img src={assets.bulb_icon} alt="" />
           </div>
         </div>
+        </>
+        : <div className="result">
+          <div className="result-title">
+            <img src={assets.user_icon} alt="" />
+            <p>{recentPrompt}</p>
+          </div>
+          <div className="result-data">
+            <img src={assets.gemini_icon} alt="" />
+            {loading
+            ? <div className="loader">
+              <hr />
+              <hr />
+              <hr />
+            </div>
+            : <p dangerouslySetInnerHTML={{__html:resultData}}></p>
+            }
+            
+          </div>
+          </div>
+        }
+        
+        
         <div className="main-bottom">
           <div className="search-box">
-            <input type="text" placeholder="Enter your prompt here" 
+            <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder="Enter your prompt here" 
              onKeyDown={(e) => e.key === 'Enter' && handleSend()} />
             <div onClick={handleSend}>
               <img src={assets.gallery_icon} alt="" />
