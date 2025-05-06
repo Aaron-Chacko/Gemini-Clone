@@ -1,9 +1,10 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-require('dotenv').config({ path: './src/config/gemini.env' });
+//require('dotenv').config({ path: './src/config/gemini.env' });
 
 console.log("API Key:", process.env.GEMINI_API_KEY); // Log the API key to check if it's loaded correctly
 
-const apiKey = process.env.GEMINI_API_KEY;
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
